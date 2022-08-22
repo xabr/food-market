@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_22_145209) do
     t.string "meal_name"
     t.float "price"
     t.integer "portions"
-    t.date "avaliable_at"
+    t.date "available_at"
     t.string "meal_description"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -29,8 +29,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_22_145209) do
   create_table "orders", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "offer_id", null: false
-    t.boolean "confirmed"
-    t.boolean "canceled"
+    t.boolean "confirmed", default: false
+    t.boolean "canceled", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["offer_id"], name: "index_orders_on_offer_id"
