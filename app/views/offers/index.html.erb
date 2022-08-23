@@ -2,7 +2,7 @@
 
 <% @offers.each do |offer| %>
 <%= offer.meal_name %>
-<%= image_tag offer.img_url, alt: "Le Wagon", width: 200 %>
+<%# <%= image_tag offer.img_url, alt: "Le Wagon", width: 200 %>
 <% end %>
 
   <%= link_to "Add an offer", offer_new_path, class: "btn btn-ghost" %>
