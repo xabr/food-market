@@ -5,10 +5,21 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+User.destroy_all
+Offer.destroy_all
 
-puts "Creating restaurants..."
+# generate random users
+puts "Creating users..."
 10.times do
-  restaurant = Restaurant.create(name: Faker::Restaurant.name, address: Faker::Address.city, category: "chinese")
-  puts "Created #{restaurant.name}"
+  user = User.create(email: Faker::Internet.email, password: "123456", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, balance: rand(1..10), address: Faker::Address.city)
+  puts "Created #{user.first_name}"
+end
+puts "Finished!"
+
+# generate random meals
+puts "Creating meals..."
+10.times do
+  offer = Offer.create(meal_name: Faker::Food.dish, price: rand(1..10), portions: rand(1..5), meal_description: Faker::Food.description, user: User.all.sample)
+  puts "Created #{offer.meal_name}"
 end
 puts "Finished!"
