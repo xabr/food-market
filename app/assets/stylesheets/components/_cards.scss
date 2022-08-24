@@ -11,6 +11,7 @@
   width: 300px;
   margin-bottom: 16px;
   margin-right: 16px;
+  position: relative;
 }
 
 .food-card > img {
@@ -37,18 +38,18 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
+  // position: relative;
 }
 
-.food-card-infos .food-card-user {
+.food-avatar {
   position: absolute;
   right: 16px;
-  top: -20px;
+  bottom: 105px;
   width: 40px;
 }
 
-.fixed {
+.fixed-price {
   position: absolute;
   right: 10px;
-  bottom: 100px;
+  bottom: 8px;
 }
