@@ -2,6 +2,10 @@
   display: flex;
   justify-content: space-between;
   background: white;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,4 +14,8 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.initial-margin {
+  margin-top: 60px;
 }
