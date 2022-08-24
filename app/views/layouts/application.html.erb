@@ -15,7 +15,9 @@
     <p class="alert"><%= alert %></p>
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
+    <div class="initial-margin">
     <%= yield %>
+    </div>
     <div class="footer">
       <div class="footer-links">
         <i class="fa-solid fa-beer-mug-empty"></i>
