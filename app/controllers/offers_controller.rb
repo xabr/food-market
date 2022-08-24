@@ -7,6 +7,12 @@ class OffersController < ApplicationController
     @offer = Offer.new
   end
 
+  def show
+    @offer = Offer.find(params[:id])
+
+  end
+
+
   def create
     @offer = Offer.new(offer_params)
     @offer.user = current_user
