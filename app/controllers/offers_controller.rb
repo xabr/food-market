@@ -17,6 +17,13 @@ class OffersController < ApplicationController
     end
   end
 
+  def destroy
+    @offer = Offer.find(offer_params)
+    @offer.destroy
+    redirect_to root_path, status: :see_other
+  end
+
+
   private
 
   def offer_params
