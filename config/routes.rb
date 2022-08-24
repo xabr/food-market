@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/offers', to: 'offers#index'
   get '/offer/new', to: 'offers#new'
+  get 'offers/:id', to: 'offers#show'
   delete 'offers/:id', to: 'offers#destroy'
   post '/offers/', to: 'offers#create'
 end
