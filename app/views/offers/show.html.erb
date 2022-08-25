@@ -16,8 +16,9 @@
     </div>
   </div>
 </div>
-
-<%#= link_to "Buy", offer_path(@offer), :class => "btn btn-success m-3" %>
+<div class="buybutton">
+  <%= link_to "Buy", orders_create_path(@offer), data: { turbo_method: "post" }, :class => "btn btn-success m-3" %>
+</div>
 
 <%#= simple_form_for @offer do |f| %>
   <%#= f.hidden_field :confirmed, value: true %>
