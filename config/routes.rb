@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   post '/orders/:offer_id', to: 'orders#create', as: :orders_create
   get '/users/:id', to: 'users#show', as: :users
   get '/users/:id/orders', to: 'orders#show', as: :orders
+
+  # Creating
+  post '/orders/:id', to: 'orders#confirmed', as: :orders_confirmed
+  post '/orders/:id', to: 'orders#canceled', as: :orders_canceled
 end

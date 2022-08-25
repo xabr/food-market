@@ -21,11 +21,12 @@ class OrdersController < ApplicationController
   end
 
   def canceled
-    @canceled = true
+    @order.canceled = true
   end
 
   def confirmed
-    @confirmed = true
+    raise
+    @order.confirmed = true
   end
 
   private
