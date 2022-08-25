@@ -1,6 +1,6 @@
 .food-cards {
   display: flex;
-  // justify-content: space-around;
+  // justify-content: ;
   flex-wrap: wrap;
 }
 
@@ -37,14 +37,18 @@
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  // align-items: flex-end;
   // position: relative;
+}
+
+.food-card-infos {
+  min-height: 140px;
 }
 
 .food-avatar {
   position: absolute;
   right: 16px;
-  bottom: 105px;
+  top: 180px;
   width: 40px;
 }
 
