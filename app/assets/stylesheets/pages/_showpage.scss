@@ -1,0 +1,18 @@
+.showpage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  .img {
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+  }
+}
+
+.details {
+  margin: auto;
+  padding: 20px;
+}
