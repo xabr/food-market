@@ -14,8 +14,8 @@ Rails.application.routes.draw do
   patch '/offers/:id', to: 'offers#update'
 
   post '/offers', to: 'offers#create'
-  get '/offers/:id/new', to: 'orders#new'
-  post '/offers', to: 'orders#create'
+  get '/order/:id/new', to: 'orders#new'
+  post '/orders/:offer_id', to: 'orders#create', as: :orders_create
   get '/users/:id', to: 'users#show', as: :users
   get '/users/:id/orders', to: 'orders#show', as: :orders
 end

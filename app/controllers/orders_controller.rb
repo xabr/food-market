@@ -10,10 +10,11 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
-    @order.offer = @offer
+    @offer = Offer.find(params[:offer_id])
+    @user = current_user
+    @order = Order.new(user: @user, offer: @offer)
     if @order.save
-      redirect_to offer_path(@offer)
+      redirect_to root_path
     else
       render :new
     end
