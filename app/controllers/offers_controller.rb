@@ -26,6 +26,13 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
   end
 
+  def update
+    @offer = Offer.find(params[:id])
+    @offer.update(offer_params)
+    # No need for app/views/offers/update.html.erb
+    redirect_to offer_path(@offer)
+  end
+
   def destroy
     @offer = Offer.find(params[:id])
     @offer.destroy
