@@ -7,14 +7,16 @@
   </div>
   <div class="container">
     <h2>Your orders</h2>
-    <% current_user.orders.each do |order| %>
-    <%= cl_image_tag order.offer.photo.key, height: 200, width: 300, crop: :fill %>
-    <h2>
-    <%= order.offer.user.first_name %>
-    <%= order.offer.user.last_name %>
-    wants to buy
-    <%= order.offer.meal_name %>
-    </h2>
+    <% current_user.offers.each do |offer| %>
+      <% offer.orders.each do |order| %>
+        <%= cl_image_tag order.offer.photo.key, height: 200, width: 300, crop: :fill %>
+        <h2>
+        <%= order.user.first_name %>
+        <%= order.user.last_name %>
+        wants to buy
+        <%= order.offer.meal_name %>
+        </h2>
+      <% end %>
     <% end %>
   </div>
 </div>
