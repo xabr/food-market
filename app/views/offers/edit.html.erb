@@ -1,0 +1,9 @@
+<%= form_with model: @offer do |f| %>
+  <%= f.label :Meal %>
+  <%= f.text_field :meal_name %>
+  <%= f.label :Description %>
+  <%= f.text_field :meal_description %>
+  <%= f.label :rating %>
+  <%= f.number_field :rating %>
+  <%= f.submit %>
+<% end %>
