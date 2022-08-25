@@ -1,0 +1,22 @@
+<%= form_with model: @offer do |f| %>
+  <%= f.label :Meal %>
+  <%= f.text_field :meal_name %>
+  <br>
+  <%= f.label :Description %>
+  <%= f.text_field :meal_description %>
+  <br>
+  <%= f.label :Portions %>
+  <%= f.text_field :portions %>
+  <br>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <br>
+  <%= f.label :image %>
+  <%#= f.input :photo, as: :file %>
+  <br>
+  <%= f.label :Availabilitydate %>
+  <%#= f.input :available_at, as: :date, html5: true %>
+  <br>
+  <%= f.submit %>
+  <br>
+<% end %>
