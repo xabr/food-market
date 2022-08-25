@@ -9,7 +9,6 @@ class OffersController < ApplicationController
 
   def show
     @offer = Offer.find(params[:id])
-
   end
 
 
@@ -24,7 +23,7 @@ class OffersController < ApplicationController
   end
 
   def destroy
-    @offer = Offer.find(offer_params)
+    @offer = Offer.find(params[:id])
     @offer.destroy
     redirect_to root_path, status: :see_other
   end
