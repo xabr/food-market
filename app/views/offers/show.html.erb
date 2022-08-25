@@ -1,16 +1,25 @@
-<h1><%= @offer.meal_name %></h1>
-<h2><%= @offer.meal_description %></h2>
-<div class="Amount:"> <%= @offer.portions %></div>
-<div class="Price:"> <%= @offer.price %></div>
-<div class="Available at:"> <%= @offer.available_at %></div>
-<br><br><br>
 
-<%= link_to "Back to all offers", root_path, :class => "btn btn-secondary m-3" %>
+<div class="showpage">
+  <%= cl_image_tag @offer.photo.key, height: 200, crop: :fill %>
+    <div class="details">
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(offer);">
+        <h1><%= @offer.meal_name %></h1>
+        <h2><%= @offer.meal_description %></h2>
+        <div class="Amount:"> <%= @offer.portions %></div>
+        <div class="Price:"> <%= @offer.price %></div>
+        <div class="Available at:"> <%= @offer.available_at %></div>
+        <br><br><br>
+        <%= link_to "Back to all offers", root_path, :class => "btn btn-secondary m-3" %>
+        <%= link_to "Edit offer", editoffer_path(@offer), :class => "btn btn-success m-3" %>
+        <%= link_to "Delete", offer_path(@offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-danger m-3" %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= link_to "Edit offer", editoffer_path(@offer), :class => "btn btn-success m-3" %>
+<%#= link_to "Buy", offer_path(@offer), :class => "btn btn-success m-3" %>
 
-<%= link_to "Delete",
-  offer_path(@offer),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-  :class => "btn btn-danger m-3"
-%>
+<%#= simple_form_for @offer do |f| %>
+  <%#= f.hidden_field :confirmed, value: true %>
+  <%#= f.button :submit %>
+<%# end %>
