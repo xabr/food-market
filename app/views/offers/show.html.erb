@@ -2,7 +2,7 @@
 <div class="showpage">
   <%= cl_image_tag @offer.photo.key, height: 200, crop: :fill %>
     <div class="details">
-      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(offer);">
+      <div class="banner">
         <h1><%= @offer.meal_name %></h1>
         <h2><%= @offer.meal_description %></h2>
         <div class="Amount:"> <%= @offer.portions %></div>
