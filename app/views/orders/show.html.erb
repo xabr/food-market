@@ -1,6 +1,20 @@
-<h2>Your orders</h2>
-
-<% current_user.orders.each do |order| %>
-<%= order.offer.meal_name %>
-<%= order.offer.user %>
-<% end %>
+<div class="d-flex">
+  <div class="profile-links">
+    <%= link_to "Edit profile", users_path, class: "single-link" %>
+    <%= link_to "History", users_path, class: "single-link"  %>
+    <%= link_to "Create offer", offer_new_path, class: "single-link" %>
+    <%= link_to "Orders", orders_path, class: "single-link" %>
+  </div>
+  <div class="container">
+    <h2>Your orders</h2>
+    <% current_user.orders.each do |order| %>
+    <%= cl_image_tag order.offer.photo.key, height: 200, width: 300, crop: :fill %>
+    <h2>
+    <%= order.offer.user.first_name %>
+    <%= order.offer.user.last_name %>
+    wants to buy
+    <%= order.offer.meal_name %>
+    </h2>
+    <% end %>
+  </div>
+</div>
