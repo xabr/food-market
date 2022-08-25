@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   post '/offers', to: 'offers#create'
   get '/offers/:id/new', to: 'orders#new'
-  get '/offers', to: 'orders#create'
+  post '/offers', to: 'orders#create'
   get '/users/:id', to: 'users#show', as: :users
   get '/users/:id/orders', to: 'orders#show', as: :orders
 end
