@@ -1,0 +1,6 @@
+<h2>Your orders</h2>
+
+<% current_user.orders.each do |order| %>
+<%= order.offer.meal_name %>
+<%= order.offer.user %>
+<% end %>
