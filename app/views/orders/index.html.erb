@@ -3,7 +3,6 @@
   <div class="profile-links">
     <%= link_to "Create offer", new_offer_path, class: "single-link" %>
     <%= link_to "Orders", orders_path, class: "single-link" %>
-    <%= link_to "Bookings", orders_path, class: "single-link" %>
   </div>
 
   <div>
@@ -12,15 +11,17 @@
       <% current_user.offers.each do |offer| %>
         <% offer.orders.each do |order| %>
 
+          <% if order.canceled == false && order.confirmed == false %>
+
           <div class="d-flex">
             <%= cl_image_tag order.offer.photo.key, height: 200, width: 300, crop: :fill %>
             <div>
-              <h2>
+              <h4>
               <%= order.user.first_name %>
               <%= order.user.last_name %>
               wants to buy
               <%= order.offer.meal_name %>
-              </h2>
+              </h4>
 
               <%= simple_form_for order do |f| %>
                 <%= f.hidden_field :confirmed, value: true %>
@@ -36,6 +37,7 @@
 
             </div>
           </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>
@@ -45,17 +47,28 @@
 
       <% current_user.orders.each do |order| %>
 
+        <% if order.confirmed == true %>
+
           <div class="d-flex">
             <%= cl_image_tag order.offer.photo.key, height: 200, width: 300, crop: :fill %>
             <div>
-              <h2>
+              <h4>
               <%= order.user.first_name %>
               <%= order.user.last_name %>
               wants to buy
               <%= order.offer.meal_name %>
-              </h2>
+              </h4>
+
+              <% if current_user == order.offer.user %>
+                <%= simple_form_for order do |f| %>
+                  <%= f.hidden_field :canceled, value: true %>
+                  <%= f.hidden_field :confirmed, value: false %>
+                  <%= f.button :submit, "Cancel" %>
+                <% end %>
+              <% end %>
             </div>
           </div>
+        <% end %>
       <% end %>
     </div>
 
@@ -64,38 +77,28 @@
 
       <% current_user.orders.each do |order| %>
 
+        <% if order.canceled == true %>
           <div class="d-flex">
             <%= cl_image_tag order.offer.photo.key, height: 200, width: 300, crop: :fill %>
             <div>
-              <h2>
+              <h4>
               <%= order.user.first_name %>
               <%= order.user.last_name %>
               wants to buy
               <%= order.offer.meal_name %>
-              </h2>
+              </h4>
+
+              <% if current_user == order.offer.user %>
+                <%= simple_form_for order do |f| %>
+                  <%= f.hidden_field :confirmed, value: true %>
+                  <%= f.hidden_field :canceled, value: false %>
+                  <%= f.button :submit, "Confirm" %>
+                <% end %>
+              <% end %>
             </div>
           </div>
+        <% end %>
       <% end %>
-    </div>
-
-    <div class="container">
-      <h2>Your unconfirmed orders</h2>
-
-      <% current_user.orders.each do |order| %>
-
-          <div class="d-flex">
-            <%= cl_image_tag order.offer.photo.key, height: 200, width: 300, crop: :fill %>
-            <div>
-              <h2>
-              <%= order.user.first_name %>
-              <%= order.user.last_name %>
-              wants to buy
-              <%= order.offer.meal_name %>
-              </h2>
-            </div>
-          </div>
-      <% end %>
-    </div>
 
   </div>
 </div>
