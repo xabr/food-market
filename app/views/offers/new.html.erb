@@ -1,11 +1,13 @@
-<%= simple_form_for @offer do |f| %>
-  <%= f.input :meal_name %>
-  <%= f.input :meal_description %>
-  <%= f.input :portions %>
-  <%= f.input :price %>
-  <%= f.input :available_at %>
-  <%= f.input :photo, as: :file %>
+<div class="container_mealcreating">
+  <%= simple_form_for @offer do |f| %>
+    <%= f.input :meal_name %>
+    <%= f.input :meal_description %>
+    <%= f.input :portions %>
+    <%= f.input :price %>
+    <%= f.input :available_at %>
+    <%= f.input :photo, as: :file %>
 
 
-  <%= f.button :submit %>
-<% end %>
+    <%= f.button :submit, class: 'btn btn-brick' %>
+  <% end %>
+</div>
