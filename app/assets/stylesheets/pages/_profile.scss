@@ -1,9 +1,9 @@
 .profile-links {
   display: inline-block;
-
-  background-color: rgb(144, 136, 136);
-  height: 100vh;
+  background-color: rgb(129, 163, 141);
+  height: 34vh;
   width: 200px;
+  border-radius: 12px;
 }
 
 .single-link {
@@ -12,4 +12,8 @@
   margin-top: 24px;
   margin-left: 24px;
   color: rgb(215, 215, 215) !important;
+}
+
+h2 {
+text-align: right;
 }

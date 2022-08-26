@@ -1,11 +1,12 @@
 .navbar-lewagon {
   display: flex;
   justify-content: space-between;
-  background: white;
+  background: rgb(252, 248, 232);
   position: fixed;
   z-index: 10000;
   top: 0;
   width: 100%;
+  color: rgb(223, 120, 97);
 }
 
 .navbar-lewagon .navbar-collapse {
