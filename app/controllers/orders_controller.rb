@@ -1,6 +1,11 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @orders = current_user.orders
+    @offer = Offer.new
+  end
+
   def show
     @orders = Order.all
   end
@@ -20,18 +25,15 @@ class OrdersController < ApplicationController
     end
   end
 
-  def canceled
-    @order.canceled = true
-  end
-
-  def confirmed
-    raise
-    @order.confirmed = true
+  def update
+    @order = Order.find(params[:id])
+    @order.update(order_params)
+    redirect_to orders_path
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:user_id, :offer_id)
+    params.require(:order).permit(:user_id, :offer_id, :confirmed, :canceled)
   end
 end
