@@ -6,17 +6,19 @@
         <h1><%= @offer.meal_name %></h1>
         <h2><%= @offer.meal_description %></h2>
         <div class="Available at:"> <%= @offer.available_at %></div>
-        <div class="details-container">
-        <div class="Amount:"> <%= @offer.portions %></div>
-        <div class="Price:"> <%= @offer.price %></div>
-        </div>
+          <div class="Amount:"> Portions: <%= @offer.portions %></div>
+          <div class="Price:"> <%= @offer.price %> €</div>
+        <br><br>
+        <div class="create-btn">
           <%= simple_form_for [@offer, @order] do |f| %>
             <%= f.button :submit, :class => "btn btn-curry"%>
           <% end %>
-        <br><br>
-        <%= link_to "Back to all offers", root_path, :class => "btn btn-fog m-3" %>
-        <%= link_to "Edit offer", edit_offer_path(@offer), :class => "btn btn-sage m-3" %>
-        <%= link_to "Delete", offer_path(@offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-brick m-3" %>
+        </div>
+        <div class="create-btn">
+          <%= link_to "Back to all offers", root_path, :class => "btn btn-fog mr-3" %>
+          <%= link_to "Edit offer", edit_offer_path(@offer), :class => "btn btn-sage mr-3" %>
+          <%= link_to "Delete", offer_path(@offer), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, :class => "btn btn-brick mr-3" %>
+        </div>
       </div>
     </div>
   </div>
