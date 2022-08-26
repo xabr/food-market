@@ -6,6 +6,7 @@
   margin: 20px;
   background-color: rgba(231, 231, 231, 0.7);
   border-radius: 8px;
+  // margin-top: 160px;
 
   img {
     height: 300px;
@@ -22,7 +23,6 @@
   padding: 20px;
 }
 
-.buybutton {
-  margin: 0 auto;
-  text-align: center;
+.details-container {
+  align-items: center;
 }
