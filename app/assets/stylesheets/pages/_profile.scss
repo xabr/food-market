@@ -1,9 +1,17 @@
 .profile-links {
-  display: inline-block;
-  background-color: rgb(129, 163, 141);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #81a38d;
   height: 34vh;
   width: 200px;
   border-radius: 12px;
+  font-size: 20px;
+  font-weight: lighter;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  text-shadow: 1px 1px #000000;
 }
 
 .single-link {
@@ -17,3 +25,30 @@
 h4 {
   text-align: right;
   }
+
+.itemscontainer {
+  margin-left: 10px;
+  border-radius: 8px;
+  font-weight: lighter;
+
+  .contentcontainer {
+    display: flex;
+    padding: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  .contenttextorder {
+  margin-left: 10px;
+  }
+
+  h2 {
+
+  }
+}
