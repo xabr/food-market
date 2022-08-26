@@ -1,8 +1,9 @@
-<h2> Hello <%= @user.first_name %> 👋 </h2>
+<div class="d-flex">
+  <div class="profile-links">
+    <%= link_to "Create offer", new_offer_path, class: "single-link" %>
+    <%= link_to "Orders", orders_path, class: "single-link" %>
+    <%= link_to "Bookings", orders_path, class: "single-link" %>
+  </div>
 
-<div class="profile-links">
-  <%= link_to "Edit profile", users_path(@user), class: "single-link" %>
-  <%= link_to "History", users_path(@user), class: "single-link"  %>
-  <%= link_to "Create offer", offer_new_path, class: "single-link" %>
-  <%= link_to "Orders", orders_path, class: "single-link" %>
+  <h2> Hello <%= @user.first_name %> 👋 </h2>
 </div>
