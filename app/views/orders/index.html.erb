@@ -16,12 +16,12 @@
           <div class="d-flex">
             <%= cl_image_tag order.offer.photo.key, height: 200, width: 300, crop: :fill %>
             <div>
-              <h2>
+              <h4>
               <%= order.user.first_name %>
               <%= order.user.last_name %>
               wants to buy
               <%= order.offer.meal_name %>
-              </h2>
+              </h4>
 
               <%= simple_form_for order do |f| %>
                 <%= f.hidden_field :confirmed, value: true %>
@@ -52,14 +52,14 @@
           <div class="d-flex">
             <%= cl_image_tag order.offer.photo.key, height: 200, width: 300, crop: :fill %>
             <div>
-              <h2>
+              <h4>
               <%= order.user.first_name %>
               <%= order.user.last_name %>
               wants to buy
               <%= order.offer.meal_name %>
-              </h2>
+              </h4>
 
-              <% if current_user.id == order.offer.user_id %>
+              <% if current_user == order.offer.user %>
                 <%= simple_form_for order do |f| %>
                   <%= f.hidden_field :canceled, value: true %>
                   <%= f.hidden_field :confirmed, value: false %>
@@ -81,14 +81,14 @@
           <div class="d-flex">
             <%= cl_image_tag order.offer.photo.key, height: 200, width: 300, crop: :fill %>
             <div>
-              <h2>
+              <h4>
               <%= order.user.first_name %>
               <%= order.user.last_name %>
               wants to buy
               <%= order.offer.meal_name %>
-              </h2>
+              </h4>
 
-              <% if current_user.id == order.offer.user_id %>
+              <% if current_user == order.offer.user %>
                 <%= simple_form_for order do |f| %>
                   <%= f.hidden_field :confirmed, value: true %>
                   <%= f.hidden_field :canceled, value: false %>
